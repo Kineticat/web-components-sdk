@@ -579,22 +579,6 @@ export class BridgeBase extends LitElement {
           this.renderTemplates.push(html`<div class="psdk-case-view"><case-view .pConn=${child}></case-view></div>`);
           break;
 
-        case 'Checkbox':
-          this.renderTemplates.push(html`<check-box-form .pConn=${child}></check-box-form>`);
-          break;
-
-        case 'Currency':
-          this.renderTemplates.push(html`<currency-form .pConn=${child}></currency-form>`);
-          break;
-
-        case 'Date':
-          this.renderTemplates.push(html`<date-form .pConn=${child}></date-form>`);
-          break;
-
-        case 'DateTime':
-          this.renderTemplates.push(html`<datetime-form .pConn=${child}></datetime-form>`);
-          break;
-
         case 'Decimal':
           this.renderTemplates.push(html`<decimal-form .pConn=${child}></decimal-form>`);
           break;
@@ -609,10 +593,6 @@ export class BridgeBase extends LitElement {
 
         case 'Dropdown':
           this.renderTemplates.push(html`<dropdown-form .pConn=${child}></dropdown-form>`);
-          break;
-
-        case 'Email':
-          this.renderTemplates.push(html`<email-form .pConn=${child}></email-form>`);
           break;
 
         case 'FileUtility':
@@ -645,18 +625,6 @@ export class BridgeBase extends LitElement {
 
         case 'OneColumn':
           this.renderTemplates.push(html`<one-column .pConn=${child}></one-column>`);
-          break;
-
-        case 'Percentage':
-          this.renderTemplates.push(html`<percentage-form .pConn=${child}></percentage-form>`);
-          break;
-
-        case 'Phone':
-          this.renderTemplates.push(html`<phone-form .pConn=${child}></phone-form>`);
-          break;
-
-        case 'Pulse':
-          this.renderTemplates.push(html`<pulse-component .pConn=${child}></pulse-component>`);
           break;
 
         case 'RadioButtons':
@@ -694,11 +662,6 @@ export class BridgeBase extends LitElement {
 
         case 'Time':
           this.renderTemplates.push(html`<time-form .pConn=${child}></time-form>`);
-          break;
-
-        case 'ToDo': // Special case of looking for either capitalization
-        case 'Todo':
-          this.renderTemplates.push(html`<todo-component .pConn=${child}></todo-component>`);
           break;
 
         case 'TwoColumn':
@@ -817,22 +780,6 @@ export class BridgeBase extends LitElement {
             theChildTemplates.push(html`<div class="psdk-case-view"><case-view .pConn=${child}></case-view></div>`);
             break;
 
-          case 'Checkbox':
-            theChildTemplates.push(html`<check-box-form .pConn=${child}></check-box-form>`);
-            break;
-
-          case 'Currency':
-            theChildTemplates.push(html`<currency-form .pConn=${child}></currency-form>`);
-            break;
-
-          case 'Date':
-            theChildTemplates.push(html`<date-form .pConn=${child}></date-form>`);
-            break;
-
-          case 'DateTime':
-            theChildTemplates.push(html`<datetime-form .pConn=${child}></datetime-form>`);
-            break;
-
           case 'Decimal':
             theChildTemplates.push(html`<decimal-form .pConn=${child}></decimal-form>`);
             break;
@@ -847,10 +794,6 @@ export class BridgeBase extends LitElement {
 
           case 'Dropdown':
             theChildTemplates.push(html`<dropdown-form .pConn=${child}></dropdown-form>`);
-            break;
-
-          case 'Email':
-            theChildTemplates.push(html`<email-form .pConn=${child}></email-form>`);
             break;
 
           case 'FlowContainer':
@@ -879,18 +822,6 @@ export class BridgeBase extends LitElement {
 
           case 'OneColumn':
             theChildTemplates.push(html`<one-column .pConn=${child}></one-column>`);
-            break;
-
-          case 'Percentage':
-            theChildTemplates.push(html`<percentage-form .pConn=${child}></percentage-form>`);
-            break;
-
-          case 'Phone':
-            theChildTemplates.push(html`<phone-form .pConn=${child}></phone-form>`);
-            break;
-
-          case 'Pulse':
-            theChildTemplates.push(html`<pulse-component .pConn=${child}></pulse-component>`);
             break;
 
           case 'RadioButtons':
@@ -932,11 +863,6 @@ export class BridgeBase extends LitElement {
 
           case 'Time':
             theChildTemplates.push(html`<time-form .pConn=${child}></time-form>`);
-            break;
-
-          case 'ToDo': // Special case of looking for either capitalization
-          case 'Todo':
-            theChildTemplates.push(html`<todo-component .pConn=${child}></todo-component>`);
             break;
 
           case 'TwoColumn':
@@ -1076,22 +1002,6 @@ export class BridgeBase extends LitElement {
           theComp = html`<autocomplete-form .pConn=${thePConn}></autocomplete-form>`;
           break;
 
-        case 'Checkbox':
-          theComp = html`<check-box-form .pConn=${thePConn}></check-box-form>`;
-          break;
-
-        case 'Currency':
-          theComp = html`<currency-form .pConn=${thePConn}></currency-form>`;
-          break;
-
-        case 'Date':
-          theComp = html`<date-form .pConn=${thePConn}></date-form>`;
-          break;
-
-        case 'DateTime':
-          theComp = html`<datetime-form .pConn=${thePConn}></datetime-form>`;
-          break;
-
         case 'Decimal':
           theComp = html`<decimal-form .pConn=${thePConn}></decimal-form>`;
           break;
@@ -1100,20 +1010,8 @@ export class BridgeBase extends LitElement {
           theComp = html`<dropdown-form .pConn=${thePConn}></dropdown-form>`;
           break;
 
-        case 'Email':
-          theComp = html`<email-form .pConn=${thePConn}></email-form>`;
-          break;
-
         case 'Integer':
           theComp = html`<integer-form .pConn=${thePConn}></integer-form>`;
-          break;
-
-        case 'Percentage':
-          theComp = html`<percentage-form .pConn=${thePConn}></percentage-form>`;
-          break;
-
-        case 'Phone':
-          theComp = html`<phone-form .pConn=${thePConn}></phone-form>`;
           break;
 
         case 'RadioButtons':

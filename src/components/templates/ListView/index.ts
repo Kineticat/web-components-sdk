@@ -250,32 +250,8 @@ class ListView extends BridgeBase {
     // eslint-disable-next-line no-restricted-syntax
     for (const row in listData) {
       // copy
+      console.log(fieldData);
       const rowData = JSON.parse(JSON.stringify(listData[row]));
-
-      // eslint-disable-next-line no-restricted-syntax
-      for (const field in fieldData) {
-        const config = fieldData[field].config;
-        let fieldName;
-        let formattedDate;
-
-        switch (fieldData[field].type) {
-          case 'Date':
-            fieldName = config.name;
-            formattedDate = Utils.generateDate(rowData[fieldName], config.formatter);
-
-            rowData[fieldName] = formattedDate;
-            break;
-          case 'DateTime':
-            fieldName = config.name;
-            formattedDate = Utils.generateDateTime(rowData[fieldName], config.formatter);
-
-            rowData[fieldName] = formattedDate;
-            break;
-          default:
-            break;
-        }
-      }
-
       returnList.push(rowData);
     }
 

@@ -560,8 +560,7 @@ class FileUtility extends BridgeBase {
 
     attsFromResp = attsFromResp.map(respAtt => {
       const updatedAtt = {
-        ...respAtt,
-        meta: `${respAtt.category} . ${Utils.generateDateTime(respAtt.createTime, 'DateTime-Since')}, ${respAtt.createdBy}`
+        ...respAtt
       };
       if (updatedAtt.type === 'FILE') {
         updatedAtt.nameWithExt = updatedAtt.fileName;

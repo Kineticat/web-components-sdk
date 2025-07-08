@@ -1,7 +1,6 @@
 import { html, LitElement, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { SdkConfigAccess } from '@pega/auth/lib/sdk-auth-manager';
-import { Utils } from '../../../helpers/utils';
 
 // NOTE: you need to import ANY component you may render.
 
@@ -190,14 +189,10 @@ class Operator extends LitElement {
           ? html`
         <div class="psdk-single psdk-top-pad">${this.label}</div>
           <span class="btn-link" type="button" color="primary" @click="${this.showOperator}">${this.name}</span>
-          ${Utils.generateDateTime(this.theDateTime, 'DateTime-Since')}
           </div>
         </div>
         `
-          : html`
-              <span class="btn-link" type="button" color="primary" @click="${this.showOperator}">${this.name}</span>
-              ${Utils.generateDateTime(this.theDateTime, 'DateTime-Since')}
-            `}
+          : html` <span class="btn-link" type="button" color="primary" @click="${this.showOperator}">${this.name}</span> `}
         ${this.bShowPopover
           ? html`
               <div class="psdk-operator-popover">

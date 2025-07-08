@@ -4,7 +4,6 @@ import { BridgeBase } from '../../bridge/BridgeBase';
 import { Utils } from '../../helpers/utils';
 import { addContainerItem, getToDoAssignments } from './helpers';
 import '../Assignment';
-import '../ToDo';
 
 // NOTE: you need to import ANY component you may render.
 
@@ -430,30 +429,13 @@ class FlowContainer extends BridgeBase {
       ${!this.bHasCaseMessages
         ? html`
       </div>
-        ${
-          !this.todo_showTodo
-            ? html`
-                <h2>${this.containerName}</h2>
-                ${this.instructionText !== '' ? html`<div class="psdk-instruction-text">${this.instructionText}</div>` : nothing}
-                <div>
-                  <assignment-component .pConn=${this.thePConn} .arChildren=${this.arNewChildren} itemKey=${this.itemKey}></assignment-component>
-                </div>
-              `
-            : html`
-                <div>
-                  <todo-component
-                    .pConn=${this.thePConn}
-                    caseInfoID=${this.todo_caseInfoID}
-                    .datasource=${this.todo_datasource}
-                    .showTodoList=${this.todo_showTodoList}
-                    headerText=${this.todo_headerText}
-                    type=${this.todo_type}
-                    context=${this.todo_context}
-                    itemKey=${this.itemKey}
-                  ></todo-component>
-                </div>
-              `
-        }
+        ${html`
+          <h2>${this.containerName}</h2>
+          ${this.instructionText !== '' ? html`<div class="psdk-instruction-text">${this.instructionText}</div>` : nothing}
+          <div>
+            <assignment-component .pConn=${this.thePConn} .arChildren=${this.arNewChildren} itemKey=${this.itemKey}></assignment-component>
+          </div>
+        `}
       <div>
         `
         : html`

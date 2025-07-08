@@ -6,8 +6,6 @@ import { BridgeBase } from '../../bridge/BridgeBase';
 // import the component's styles as HTML with <style>
 import { modalViewContainerStyles } from './modal-view-container-styles';
 
-import '../CancelAlert';
-
 //
 // WARNING:  It is not expected that this file should be modified.  It is part of infrastructure code that works with
 // Redux and creation/update of Redux containers and PConnect.  Modifying this code could have undesireable results and
@@ -298,10 +296,6 @@ class ModalViewContainer extends BridgeBase {
               </div>
             </div>
           `
-        : html``}
-      ${this.bShowCancelAlert
-        ? html`
-      <cancel-alert-component .bShowAlert=${this.bShowCancelAlert} @AlertState=${this._onAlertState}" .pConn=${this.cancelPConn}></app-cancel-alert>`
         : html``}
     `;
   }

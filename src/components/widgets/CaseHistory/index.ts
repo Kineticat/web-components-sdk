@@ -1,7 +1,6 @@
 import { html, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { BridgeBase } from '../../../bridge/BridgeBase';
-import { Utils } from '../../../helpers/utils';
 
 // NOTE: you need to import ANY component you may render.
 import '../../designSystemExtension/ProgressIndicator';
@@ -131,15 +130,7 @@ class CaseHistory extends BridgeBase {
       }
       // Now, for each property in the index of row properties (displayedColumns), add an object
       //  to a new array of values
-      const rowDisplayValues: any = [];
-      this.displayedColumns.forEach((column: any, rowValIndex) => {
-        const theType = column.type;
-        const theFieldName = column.fieldName;
-        const theValue =
-          theType === 'Date' || theType === 'DateTime' ? Utils.generateDateTime(row[theFieldName], 'DateTime-Short') : row[theFieldName];
-        rowDisplayValues[rowValIndex] = theValue;
-      });
-      this.rowData[rowIndex] = rowDisplayValues;
+      this.rowData[rowIndex] = [];
     });
 
     if (this.bLogging) {
